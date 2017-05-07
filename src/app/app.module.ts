@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { StreamFetchFeedComponent } from './stream-fetch-feed/stream-fetch-feed.component';
+import { StreamAddActivityComponent } from './stream-add-activity/stream-add-activity.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StreamFetchFeedComponent,
+    StreamAddActivityComponent
   ],
   imports: [
     BrowserModule,
