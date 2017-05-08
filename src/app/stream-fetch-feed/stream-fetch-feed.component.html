@@ -1,13 +1,16 @@
 <div>
   <h2>Fetch Feed</h2>
-  <button (click)="getFeed()">Fetch the feed</button>
+  <button class="button" (click)="getFeed()">
+    <span *ngIf="!activities || activities.length == 0">Fetch the feed</span>
+    <span *ngIf="activities && activities.length > 0">Re-fetch the feed</span>
+  </button>
   <h3>Activities</h3>
-  <ul *ngIf="activities">
-    <li *ngFor="let activity of activities">
-      [{{ activity.id }}] {{activity.actor }}: {{ activity.verb }}:: {{activity.object }}
-    </li>
-  </ul>
-  <div *ngIf="activities.length == 0">
+  <div class="callout" *ngFor="let activity of activities">
+    <div><strong>{{ activity.id }}</strong></div>
+    <div><em>{{activity.actor }}: {{ activity.verb }}</em></div>
+    <p>{{activity.object }}</p>
+  </div>
+  <div *ngIf="!activities || activities.length == 0">
     <p>No activities fetched</p>
   </div>
 </div>

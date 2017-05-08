@@ -1,15 +1,14 @@
+
+<h2>Add Activity</h2>
 <div>
-  <h2>Add Activity</h2>
-  <div>
-    <input type="text" placeholder="actor" [(ngModel)]="newActivity.actor">
-  </div>
-  <div>
-    <input type="text" placeholder="verb" [(ngModel)]="newActivity.verb">
-  </div>
-  <div>
-    <textarea [(ngModel)]="newActivity.object"></textarea>
-  </div>
-  <div>
-    <button (click)="addActivity()">Add activity</button>
-  </div>
+  <input type="text" placeholder="actor" [(ngModel)]="newActivity.actor">
+</div>
+<div>
+  <input type="text" placeholder="verb" [(ngModel)]="newActivity.verb">
+</div>
+<div>
+  <textarea [(ngModel)]="newActivity.object"></textarea>
+</div>
+<div>
+  <button class="button" (click)="addActivity()">Add activity</button>
 </div>
