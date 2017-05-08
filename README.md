@@ -1,6 +1,18 @@
 # stream-ng-demo
 
+## Installation
 
+1. Install project dependencies: `npm install` or `yarn install`
+2. Create a stream project and define feed groups
+3. Add stream feed tokens:
+    ```javascript
+    const APP_TOKEN = '';
+    const APP_ID = '';
+    const FEED_GROUP = '';
+    const FEED_ID = '';
+    const FEED_TOKEN = '';
+    ```
+4. Run the app: `ng serve`
 
 ## Angular-cli project basics
 
