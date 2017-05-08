@@ -8,7 +8,7 @@ declare let $: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Stream NG2 Demo';
+  title = 'Stream Angular Demo';
 
   ngOnInit() {
     console.log('AppComponent initializing...');

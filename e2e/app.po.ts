@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class StreamNg2DemoPage {
+export class StreamNgDemoPage {
   navigateTo() {
     return browser.get('/');
   }

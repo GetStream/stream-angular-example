@@ -1,10 +1,10 @@
-import { StreamNg2DemoPage } from './app.po';
+import { StreamNgDemoPage } from './app.po';
 
-describe('stream-ng2-demo App', () => {
-  let page: StreamNg2DemoPage;
+describe('stream-ng-demo App', () => {
+  let page: StreamNgDemoPage;
 
   beforeEach(() => {
-    page = new StreamNg2DemoPage();
+    page = new StreamNgDemoPage();
   });
 
   it('should display message saying app works', () => {
