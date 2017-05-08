@@ -9,7 +9,7 @@ import { StreamActivity } from '../stream-activity';
   ],
   selector: 'app-stream-add-activity',
   templateUrl: './stream-add-activity.component.html',
-  styleUrls: ['./stream-add-activity.component.css']
+  styleUrls: ['./stream-add-activity.component.scss']
 })
 export class StreamAddActivityComponent implements OnInit {
   newActivity: StreamActivity;

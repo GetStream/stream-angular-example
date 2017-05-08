@@ -9,7 +9,7 @@ import { StreamActivity } from '../stream-activity';
   ],
   selector: 'app-stream-fetch-feed',
   templateUrl: './stream-fetch-feed.component.html',
-  styleUrls: ['./stream-fetch-feed.component.css']
+  styleUrls: ['./stream-fetch-feed.component.scss']
 
 })
 export class StreamFetchFeedComponent implements OnInit {
