@@ -28,7 +28,7 @@ export class StreamFetchFeedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('[Component] stream-fetch-feed running');
+    console.log('StreamFetchFeedComponent initializing...');
   }
 
 }

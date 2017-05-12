@@ -30,7 +30,7 @@ export class StreamAddActivityComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('[Component] stream-add-activity running');
+    console.log('StreamAddActivityComponent initializing...');
   }
 
 }
