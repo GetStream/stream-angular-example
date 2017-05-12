@@ -1,5 +1,21 @@
+@import '../../assets/foundation-sites/_global';
+
 .top-bar {
   margin-bottom: 20px;
+
+  a {
+    color: $top-bar-color;
+    font-family: "Hanken Sans","Helvetica Neue",Helvetica,sans-serif;
+
+    &:hover {
+      color: #111a23;
+      transition: .2s;
+    }
+
+    .hvr-line:before {
+      background: #fff !important;
+    }
+  }
 
   .menu-text {
     img {
@@ -8,9 +24,24 @@
     }
 
     a {
-      color: black;
+      color: $top-bar-color;
       display: inline;
       padding: 0;
+    }
+  }
+
+  .top-bar-right {
+    font-size: 16px;
+
+    a {
+      line-height: 22px;
+      &:hover {
+        color: #111a23;
+      }
+
+      &.active-link {
+        color: #111a23;
+      }
     }
   }
 }

@@ -1,16 +1,28 @@
-<div>
-  <h2>Fetch Feed</h2>
-  <button class="button" (click)="getFeed()">
-    <span *ngIf="!activities || activities.length == 0">Fetch the feed</span>
-    <span *ngIf="activities && activities.length > 0">Re-fetch the feed</span>
-  </button>
-  <h3>Activities</h3>
-  <div class="callout" *ngFor="let activity of activities">
-    <div><strong>{{ activity.id }}</strong></div>
-    <div><em>{{activity.actor }}: {{ activity.verb }}</em></div>
-    <p>{{activity.object }}</p>
+<div class="row">
+  <div class="medium-12 columns">
+    <h2>Fetch Feed</h2>
+    <button class="mktg-btn-links mktg-btn-lift" (click)="getFeed()">
+      <span *ngIf="!activities || activities.length == 0">Fetch the feed</span>
+      <span *ngIf="activities && activities.length > 0">Re-fetch the feed</span>
+    </button>
   </div>
-  <div *ngIf="!activities || activities.length == 0">
-    <p>No activities fetched</p>
+</div>
+<div class="row">
+  <div class="medium-12 columns">
+    <h3>Activities</h3>
+    <div class="row"  *ngFor="let activity of activities">
+      <div class="medium-12 columns">
+        <div class="callout">
+          <div><strong>{{ activity.id }}</strong></div>
+          <div><em>{{activity.actor }}: {{ activity.verb }}</em></div>
+          <p>{{activity.object }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!activities || activities.length == 0">
+      <div class="medium-12 columns">
+        <p>No activities fetched</p>
+      </div>
+    </div>
   </div>
 </div>
