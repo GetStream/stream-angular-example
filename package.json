@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
-    "foundation-sites": "^6.3.1",
+    "foundation-sites": "^6.4.1",
     "getstream": "^3.5.0",
     "rxjs": "^5.1.0",
     "webfontloader": "^1.6.27",
