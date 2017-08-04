@@ -11,6 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AddActivityPageComponent } from './add-activity-page/add-activity-page.component';
 import { GetFeedPageComponent } from './get-feed-page/get-feed-page.component';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { JwtGeneratorPageComponent } from './jwt-generator-page/jwt-generator-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
     HomePageComponent,
     AddActivityPageComponent,
     GetFeedPageComponent,
-    TopNavBarComponent
+    TopNavBarComponent,
+    JwtGeneratorPageComponent
   ],
   imports: [
     BrowserModule,

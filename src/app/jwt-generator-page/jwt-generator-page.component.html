@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <h1>JWT Generator</h1>
+    <form (ngSubmit)="onSubmit()" novalidate>
+      <div>
+        <label for="apiSecret">API Secret (required):</label>
+        <input id="apiSecret" name="apiSecret" type="text" [(ngModel)]="apiSecret">
+      </div>
+      <div>
+        <label for="resource">Resource:</label>
+        <select id="resource" name="resource" [(ngModel)]="resource">
+          <option value="activities">activities - Activities Endpoint</option>
+          <option value="feed">feed - Feed endpoint</option>
+          <option value="follower">follower - Following + Followers Endpoint</option>
+          <option value="*">* - Allow access to any resource</option>
+        </select>
+      </div>
+      <div>
+        <label for="action">Action:</label>
+        <select id="action" name="action" [(ngModel)]="action">
+          <option value="read">read (GET, OPTIONS, HEAD)</option>
+          <option value="write">write (POST, PUT, PATCH)</option>
+          <option value="delete">delete (DELETE)</option>
+          <option value="*">* (The JWT has permission to all HTTP verbs)</option>
+        </select>
+      </div>
+      <div>
+        <label for="feedId">Feed Id:</label>
+        <input id="feedId" name="feedId" type="text" [(ngModel)]="feedId">
+      </div>
+      <div>
+        <label for="feedId">User Id:</label>
+        <input id="userId" name="userId" type="text" [(ngModel)]="userId">
+      </div>
+      <div>
+        <button type="submit" class="button success" [disabled]="!apiSecret">Generate</button>
+      </div>
+    </form>
+    <div class="callout jwt-generated">
+      <p>{{ jsonWebToken || "Your JWT will be generated here." }}</p>
+    </div>
+    <p>
+      See also: Stream's <a href="https://getstream.io/docs_rest/#authentication">REST Authentication</a> documentation.
+    </p>
+  </div>
+</div>
