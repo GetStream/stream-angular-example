@@ -6,3 +6,8 @@
 @import 'assets/scss/fonts';
 @import 'assets/scss/animation';
 @import 'assets/scss/buttons';
+@import 'assets/scss/clipboard-copy-button';
+@include foundation-clipboard-copy-button;
+
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';

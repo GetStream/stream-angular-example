@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import signing from 'getstream/src/lib/signing';
 
+declare let $: any;
+import * as Clipboard from 'clipboard';
+
 import KJUR from 'jsrsasign';
 
 const JWT_SIGNING_ALGORITHM = "HS256";
@@ -23,6 +26,18 @@ export class JwtGeneratorPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var jwtClipboardCopyBtnId = "#jwtClipboardCopyBtn"
+    var jwtClipboardCopyBtnTooltip = $(jwtClipboardCopyBtnId);
+    jwtClipboardCopyBtnTooltip.foundation();
+    var jwtClipboardCopyBtn = new Clipboard(jwtClipboardCopyBtnId);
+    jwtClipboardCopyBtn.on('success', function(e) {
+      jwtClipboardCopyBtnTooltip.foundation("show");
+    });
+    jwtClipboardCopyBtnTooltip.mouseout(function() {
+      jwtClipboardCopyBtnTooltip.foundation("hide");
+    })
+
+
     this.generateJWT();
   }
 

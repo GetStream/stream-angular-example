@@ -1,0 +1,104 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+// Based on the close-button component
+
+////
+/// @group clipboard-copy-button
+////
+
+/// Default position of the clipboard copy button. The first value should be `right` or `left`, and the second value should be `top` or `bottom`.
+/// @type List
+$clipboardcopybutton-position: right top !default;
+
+/// Right (or left) offset(s) for a clipboard copy button.
+/// @type Number|Map
+$clipboardcopybutton-offset-horizontal: (
+  small: 0.33rem,
+  medium: 0.5rem,
+) !default;
+
+/// Top (or bottom) offset(s) for a clipboard copy button.
+/// @type Number|Map
+$clipboardcopybutton-offset-vertical: (
+  small: 0.33em,
+  medium: 0.5rem,
+) !default;
+
+/// Default font size(s) of the clipboard copy button.
+/// @type Number|Map
+$clipboardcopybutton-size: (
+  small: 1.5em,
+  medium: 2em,
+) !default;
+
+/// The line-height of the clipboard copy button. It affects the spacing of the element.
+/// @type Number
+$clipboardcopybutton-lineheight: 1 !default;
+
+/// Default color of the clipboard copy button.
+/// @type Color
+$clipboardcopybutton-color: $dark-gray !default;
+
+/// Default color of the clipboard copy button when being hovered on.
+/// @type Color
+$clipboardcopybutton-color-hover: $black !default;
+
+
+/// Get the size and position for a clipboard copy button. If the input value is a number, the number is returned. If the input value is a config map and the map has the key `$size`, the value is returned.
+///
+/// @param {Number|Map} $value - A number or map that represents the size or position value(s) of the clipboard copy button.
+/// @param {Keyword} $size - The size of the clipboard copy button to use.
+///
+/// @return {Number} The given number or the value found in the map.
+@function -zf-get-size-val($value, $size) {
+  // Check if the value is a number
+  @if type-of($value) == 'number' {
+    // If it is, just return the number
+    @return $value;
+  }
+
+  // Check if the size name exists in the value map
+  @else if map-has-key($value, $size) {
+    // If it does, return the value
+    @return map-get($value, $size);
+  }
+}
+
+/// Sets the size and position of a clipboard copy button.
+/// @param {Keyword} $size [medium] - The size to use. Set to `small` to create a small clipboard copy button. The 'medium' values defined in `$clipboardcopybutton-*` variables will be used as the default size and position of the clipboard copy button.
+@mixin clipboard-copy-button-size($size) {
+  $x: nth($clipboardcopybutton-position, 1);
+  $y: nth($clipboardcopybutton-position, 2);
+
+  #{$x}: -zf-get-size-val($clipboardcopybutton-offset-horizontal, $size);
+  #{$y}: -zf-get-size-val($clipboardcopybutton-offset-vertical, $size);
+  font-size: -zf-get-size-val($clipboardcopybutton-size, $size);
+  line-height: -zf-get-size-val($clipboardcopybutton-lineheight, $size);
+}
+
+/// Adds styles for a clipboard copy button, using the styles in the settings variables.
+@mixin clipboard-copy-button {
+  $x: nth($clipboardcopybutton-position, 1);
+  $y: nth($clipboardcopybutton-position, 2);
+
+  @include disable-mouse-outline;
+  position: absolute;
+  color: $clipboardcopybutton-color;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $clipboardcopybutton-color-hover;
+  }
+}
+
+@mixin foundation-clipboard-copy-button {
+  .clipboard-copy-button {
+    @include clipboard-copy-button;
+
+    &.small { @include clipboard-copy-button-size(small) }
+    &, &.medium { @include clipboard-copy-button-size(medium) }
+  }
+}
