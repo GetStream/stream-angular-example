@@ -25,7 +25,7 @@ export class StreamAddActivityComponent implements OnInit {
     console.log('[method] addActivity called', this.streamClient);
 
     this.streamClient.addActivity(this.newActivity).then(activity_id => {
-      console.log("Service promise resolved: ", activity_id);
+      console.log('Service promise resolved: ', activity_id);
     });
   }
 

@@ -22,7 +22,7 @@ export class StreamFetchFeedComponent implements OnInit {
       console.log('[method] getFeed called', this.streamClient);
 
       this.streamClient.getFeed().then(activities => {
-        console.log("Service promise resolved: ", activities);
+        console.log('Service promise resolved: ', activities);
         this.activities = activities;
       });
   }

@@ -6,7 +6,7 @@ import * as Clipboard from 'clipboard';
 
 import KJUR from 'jsrsasign';
 
-const JWT_SIGNING_ALGORITHM = "HS256";
+const JWT_SIGNING_ALGORITHM = 'HS256';
 
 @Component({
   selector: 'app-jwt-generator-page',
@@ -18,23 +18,23 @@ export class JwtGeneratorPageComponent implements OnInit {
 
   private jsonWebToken;
   private apiSecret;
-  private resource = "*";
-  private action = "*";
-  private feedId = "*";
-  private userId = "*";
+  private resource = '*';
+  private action = '*';
+  private feedId = '*';
+  private userId = '*';
 
   constructor() { }
 
   ngOnInit() {
-    var jwtClipboardCopyBtnId = "#jwtClipboardCopyBtn"
-    var jwtClipboardCopyBtnTooltip = $(jwtClipboardCopyBtnId);
+    const jwtClipboardCopyBtnId = '#jwtClipboardCopyBtn';
+    const jwtClipboardCopyBtnTooltip = $(jwtClipboardCopyBtnId);
     jwtClipboardCopyBtnTooltip.foundation();
-    var jwtClipboardCopyBtn = new Clipboard(jwtClipboardCopyBtnId);
+    const jwtClipboardCopyBtn = new Clipboard(jwtClipboardCopyBtnId);
     jwtClipboardCopyBtn.on('success', function(e) {
-      jwtClipboardCopyBtnTooltip.foundation("show");
+      jwtClipboardCopyBtnTooltip.foundation('show');
     });
     jwtClipboardCopyBtnTooltip.mouseout(function() {
-      jwtClipboardCopyBtnTooltip.foundation("hide");
+      jwtClipboardCopyBtnTooltip.foundation('hide');
     })
 
 
@@ -51,7 +51,7 @@ export class JwtGeneratorPageComponent implements OnInit {
     }
 
     // Setup the JWT payload
-    var jwtPayload = {
+    const jwtPayload = {
       resource: this.resource,
       action: this.action
     };
@@ -65,8 +65,8 @@ export class JwtGeneratorPageComponent implements OnInit {
       jwtPayload['user_id'] = this.userId;
     }
 
-    var sHeader = JSON.stringify(this.jwtHeader);
-    var sPayload = JSON.stringify(jwtPayload);
+    const sHeader = JSON.stringify(this.jwtHeader);
+    const sPayload = JSON.stringify(jwtPayload);
 
     this.jsonWebToken = KJUR.jws.JWS.sign(
       JWT_SIGNING_ALGORITHM,

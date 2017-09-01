@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GetFeedPageComponent } from './get-feed-page.component';
+import { StreamFetchFeedComponent } from '../stream-fetch-feed/stream-fetch-feed.component';
 
 describe('GetFeedPageComponent', () => {
   let component: GetFeedPageComponent;
@@ -8,7 +9,7 @@ describe('GetFeedPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetFeedPageComponent ]
+      declarations: [ GetFeedPageComponent, StreamFetchFeedComponent ]
     })
     .compileComponents();
   }));

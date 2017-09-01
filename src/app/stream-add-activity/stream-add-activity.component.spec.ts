@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { StreamAddActivityComponent } from './stream-add-activity.component';
 
@@ -8,7 +9,8 @@ describe('StreamAddActivityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StreamAddActivityComponent ]
+      declarations: [ StreamAddActivityComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));
