@@ -39,10 +39,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
-### Further help
+## Copyright and License Information
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2015-2017 Stream.io Inc, and individual contributors. All rights reserved.
 
-## License
-
-This project is licensed under the MIT license, Copyright (c) 2017 Dwight Gunning, and individual contributors. For full details see `LICENSE.md`.
+See the file "LICENSE" for information on the history of this software, terms & conditions for usage, and a DISCLAIMER OF ALL WARRANTIES.
