@@ -1,4 +1,4 @@
-# stream-ng-demo
+# stream-angular-example
 
 ## Installation
 

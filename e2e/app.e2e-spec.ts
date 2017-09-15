@@ -1,6 +1,6 @@
 import { StreamNgDemoPage } from './app.po';
 
-describe('stream-ng-demo App', () => {
+describe('stream-angular-example App', () => {
   let page: StreamNgDemoPage;
 
   beforeEach(() => {
