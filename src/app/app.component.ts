@@ -10,9 +10,9 @@ declare let $: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  title = 'app';
 
   ngOnInit() {
-    console.log('AppComponent initializing...');
     $(document).foundation();
 
     WebFont.load({

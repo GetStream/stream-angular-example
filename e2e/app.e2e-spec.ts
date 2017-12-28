@@ -7,8 +7,8 @@ describe('stream-angular-example App', () => {
     page = new StreamNgDemoPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying "Stream Angular Demo"', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Stream Angular Demo');
   });
 });

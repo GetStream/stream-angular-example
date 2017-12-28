@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { StreamFetchFeedComponent } from './stream-fetch-feed.component';
 
@@ -8,7 +9,8 @@ describe('StreamFetchFeedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StreamFetchFeedComponent ]
+      declarations: [ StreamFetchFeedComponent ],
+      imports: [ FormsModule ],
     })
     .compileComponents();
   }));

@@ -1,17 +1,13 @@
-<div class="row">
-  <div class="medium-12 columns">
-    <h2>Add Activity</h2>
-    <div>
-      <input type="text" placeholder="actor" [(ngModel)]="newActivity.actor">
-    </div>
-    <div>
-      <input type="text" placeholder="verb" [(ngModel)]="newActivity.verb">
-    </div>
-    <div>
-      <textarea [(ngModel)]="newActivity.object"></textarea>
-    </div>
-    <div>
-      <button class="mktg-btn-links mktg-btn-lift" (click)="addActivity()">Add activity</button>
-    </div>
-  </div>
+<h2>Add Activity</h2>
+<div>
+  <input type="text" placeholder="actor" [(ngModel)]="newActivity.actor">
+</div>
+<div>
+  <input type="text" placeholder="verb" [(ngModel)]="newActivity.verb">
+</div>
+<div>
+  <textarea [(ngModel)]="newActivity.object"></textarea>
+</div>
+<div>
+  <button class="mktg-btn-links mktg-btn-lift" (click)="addActivity()">Add activity</button>
 </div>

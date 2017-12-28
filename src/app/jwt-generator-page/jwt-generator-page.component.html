@@ -1,67 +1,71 @@
-<div class="row">
-  <div class="medium-12 columns">
-    <h1>JWT Generator</h1>
-    <p>Use this JWT Generator utility to quickly generate appropriate tokens for developing and testing against Stream feeds.</p>
-    <p>When working with JWT tokens, note that the Stream API expects the following HTTP Headers:</p>
-    <ul>
-      <li><strong>Stream-Auth-Type:</strong> jwt</li>
-      <li><strong>Authorization:</strong> << JWT Token>></li>
-    </ul>
-    <p>See also: Stream's <a href="https://getstream.io/docs_rest/#authentication" target="_blank">REST Authentication</a> documentation.</p>
-    <h2>Generate a token</h2>
-    <form (ngSubmit)="onSubmit()" novalidate>
-      <div>
-        <label for="apiSecret">API Secret (required):</label>
-        <input id="apiSecret" name="apiSecret" type="text" [(ngModel)]="apiSecret">
+<div class="grid-container">
+  <div class="grid-x">
+    <div class="medium-12 cell">
+      <div class="callout">
+        <h1>JWT Generator</h1>
+        <p>Use this JWT Generator utility to quickly generate appropriate tokens for developing and testing against Stream feeds.</p>
+        <p>When working with JWT tokens, note that the Stream API expects the following HTTP Headers:</p>
+        <ul>
+          <li><strong>Stream-Auth-Type:</strong> jwt</li>
+          <li><strong>Authorization:</strong> << JWT Token>></li>
+        </ul>
+        <p>See also: Stream's <a href="https://getstream.io/docs_rest/#authentication" target="_blank">REST Authentication</a> documentation.</p>
+        <h2>Generate a token</h2>
+        <form (ngSubmit)="onSubmit()" novalidate>
+          <div>
+            <label for="apiSecret">API Secret (required):</label>
+            <input id="apiSecret" name="apiSecret" type="text" [(ngModel)]="apiSecret">
+          </div>
+          <div>
+            <label for="resource">Resource:</label>
+            <select id="resource" name="resource" [(ngModel)]="resource">
+              <option value="activities">activities - Activities Endpoint</option>
+              <option value="feed">feed - Feed endpoint</option>
+              <option value="follower">follower - Following + Followers Endpoint</option>
+              <option value="*">* - Allow access to any resource</option>
+            </select>
+          </div>
+          <div>
+            <label for="action">Action:</label>
+            <select id="action" name="action" [(ngModel)]="action">
+              <option value="read">read (GET, OPTIONS, HEAD)</option>
+              <option value="write">write (POST, PUT, PATCH)</option>
+              <option value="delete">delete (DELETE)</option>
+              <option value="*">* (The JWT has permission to all HTTP verbs)</option>
+            </select>
+          </div>
+          <div>
+            <label for="feedId">Feed Id:</label>
+            <input id="feedId" name="feedId" type="text" [(ngModel)]="feedId">
+          </div>
+          <div>
+            <label for="feedId">User Id:</label>
+            <input id="userId" name="userId" type="text" [(ngModel)]="userId">
+          </div>
+          <div>
+            <button type="submit" class="button success" [disabled]="!apiSecret">Generate</button>
+          </div>
+        </form>
+        <div class="callout jwt-generated">
+          <p id="jsonWebToken">{{ jsonWebToken || "Your JWT will be generated here." }}</p>
+          <button
+            id="jwtClipboardCopyBtn"
+            class="clipboard-copy-button has-tip"
+            aria-label="Copy to clipboard"
+            type="button"
+            data-clipboard-target="#jsonWebToken"
+            data-tooltip
+            aria-haspopup="true"
+            data-disable-hover="true"
+            data-click-open="false"
+            tabindex="1"
+            title="Token copied to clipboard."
+            data-position="left"
+            data-alignment="bottom">
+            <span aria-hidden="true"><i class="fa fa-clipboard" aria-hidden="true"></i></span>
+          </button>
+        </div>
       </div>
-      <div>
-        <label for="resource">Resource:</label>
-        <select id="resource" name="resource" [(ngModel)]="resource">
-          <option value="activities">activities - Activities Endpoint</option>
-          <option value="feed">feed - Feed endpoint</option>
-          <option value="follower">follower - Following + Followers Endpoint</option>
-          <option value="*">* - Allow access to any resource</option>
-        </select>
-      </div>
-      <div>
-        <label for="action">Action:</label>
-        <select id="action" name="action" [(ngModel)]="action">
-          <option value="read">read (GET, OPTIONS, HEAD)</option>
-          <option value="write">write (POST, PUT, PATCH)</option>
-          <option value="delete">delete (DELETE)</option>
-          <option value="*">* (The JWT has permission to all HTTP verbs)</option>
-        </select>
-      </div>
-      <div>
-        <label for="feedId">Feed Id:</label>
-        <input id="feedId" name="feedId" type="text" [(ngModel)]="feedId">
-      </div>
-      <div>
-        <label for="feedId">User Id:</label>
-        <input id="userId" name="userId" type="text" [(ngModel)]="userId">
-      </div>
-      <div>
-        <button type="submit" class="button success" [disabled]="!apiSecret">Generate</button>
-      </div>
-    </form>
-    <div class="callout jwt-generated">
-      <p id="jsonWebToken">{{ jsonWebToken || "Your JWT will be generated here." }}</p>
-      <button
-        id="jwtClipboardCopyBtn"
-        class="clipboard-copy-button has-tip"
-        aria-label="Copy to clipboard"
-        type="button"
-        data-clipboard-target="#jsonWebToken"
-        data-tooltip
-        aria-haspopup="true"
-        data-disable-hover="true"
-        data-click-open="false"
-        tabindex="1"
-        title="Token copied to clipboard."
-        data-position="left"
-        data-alignment="bottom">
-        <span aria-hidden="true"><i class="fa fa-clipboard" aria-hidden="true"></i></span>
-      </button>
     </div>
   </div>
 </div>
